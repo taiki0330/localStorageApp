@@ -52,24 +52,26 @@ input {
       padding: 8px;
       margin-bottom: 10px;
       width: 100%;
+      border: none;
+      background-color: #e3e2e2;
 }
 
 .contents_box button {
       width: 80%;
       margin: 0 20px;
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 600;
       background: linear-gradient(135deg, #E5258C 0%, #823CD7 100%);;
       color: white;
       border-radius: 20px;
       border: none;
       padding: 16px;
       cursor: pointer;
-      transition: 1s;
+      /* transition: 1s; */
 }
-/* .contents_box button:hover {
-      scale: 1.05;
-} */
+.contents_box button:hover {
+      background: #E5258C;
+}
 
 .past_contents {
       width: 100%;
@@ -88,15 +90,15 @@ input {
       color: white;
       border-radius: 28px;
       border: none;
-      padding: 16px;
+      padding: 17px;
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
-      transition: 1s;
+      /* transition: 1s; */
 }
 
 .past_box button:hover {
-      scale: 1.04;
+      background: #E5258C;
 }
 
 .outer_box {
