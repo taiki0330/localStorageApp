@@ -3,20 +3,67 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./css/style.css">
       <title>localStorageApp</title>
 </head>
 <body>
-      <header>支出を管理しよう</header>
-      <section class="inner">
-            <section class="main">
-                  <p>あなたの支出は</p>
-                  <h2></h2>
-                  <p>円です</p>
-            </section>
-            <section class="side">
-                  <button>支出内訳</button>
-                  <div class="toggle_box"></div>
-            </section>
-      </section>
+      <header>
+            <h1>支出管理</h1>
+      </header>
+
+      <div class="add_contents">
+            <div class="contents_box">
+                  <label for="" class="contents_label">食費</label>
+                  <input type="text" class="input">
+                  <button class="add_button">追加する</button>
+            </div>
+            <div class="contents_box">
+                  <label for="" class="contents_label">娯楽費</label>
+                  <input type="text" class="input">
+                  <button class="add_button">追加する</button>
+            </div>
+            <div class="contents_box">
+                  <label for="" class="contents_label">交通費</label>
+                  <input type="text" class="input">
+                  <button class="add_button">追加する</button>
+            </div>
+            <div class="contents_box">
+                  <label for="" class="contents_label">交際費</label>
+                  <input type="text" class="input">
+                  <button class="add_button">追加する</button>
+            </div>
+            <div class="contents_box">
+                  <label for="" class="contents_label">日用品</label>
+                  <input type="text" class="input">
+                  <button class="add_button">追加する</button>
+            </div>
+      </div>
+
+      <div class="past_contents">
+            <div class="past_box">
+                   <button class="past_button">履歴を確認</button>
+                   <div class="outer_box"></div>
+            </div>
+            <div class="past_box">
+                  <button class="past_button">履歴を確認</button>
+                  <div class="outer_box"></div>
+            </div>
+            <div class="past_box">
+                  <button class="past_button">履歴を確認</button>
+                  <div class="outer_box"></div>
+            </div>
+            <div class="past_box">
+                  <button class="past_button">履歴を確認</button>
+                  <div class="outer_box"></div>
+            </div>
+            <div class="past_box">
+                  <button class="past_button">履歴を確認</button>
+                  <div class="outer_box"></div>
+            </div>
+      </div>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script src="./main.js"></script>
 </body>
 </html>
