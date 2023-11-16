@@ -8,33 +8,33 @@
 </head>
 <body>
       <header>
-            <h1>支出管理</h1>
+            <h1>expense management</h1>
       </header>
 
       <div class="add_contents">
             <div class="contents_box">
-                  <label for="" class="contents_label">食費</label>
-                  <input type="text" class="input">
+                  <label for="" class="contents_label">食費</label><span></span>
+                  <input type="number" class="input">
                   <button class="add_button">追加する</button>
             </div>
             <div class="contents_box">
-                  <label for="" class="contents_label">娯楽費</label>
-                  <input type="text" class="input">
+                  <label for="" class="contents_label">娯楽費</label><span></span>
+                  <input type="number" class="input">
                   <button class="add_button">追加する</button>
             </div>
             <div class="contents_box">
-                  <label for="" class="contents_label">交通費</label>
-                  <input type="text" class="input">
+                  <label for="" class="contents_label">交通費</label><span></span>
+                  <input type="number" class="input">
                   <button class="add_button">追加する</button>
             </div>
             <div class="contents_box">
-                  <label for="" class="contents_label">交際費</label>
-                  <input type="text" class="input">
+                  <label for="" class="contents_label">交際費</label><span></span>
+                  <input type="number" class="input">
                   <button class="add_button">追加する</button>
             </div>
             <div class="contents_box">
-                  <label for="" class="contents_label">日用品</label>
-                  <input type="text" class="input">
+                  <label for="" class="contents_label">日用品</label><span></span>
+                  <input type="number" class="input">
                   <button class="add_button">追加する</button>
             </div>
       </div>
@@ -42,27 +42,53 @@
       <div class="past_contents">
             <div class="past_box">
                    <button class="past_button">履歴を確認</button>
-                   <div class="outer_box"></div>
+                   <!-- <div class="outer_box"></div> -->
             </div>
             <div class="past_box">
                   <button class="past_button">履歴を確認</button>
-                  <div class="outer_box"></div>
+                  <!-- <div class="outer_box"></div> -->
             </div>
             <div class="past_box">
                   <button class="past_button">履歴を確認</button>
-                  <div class="outer_box"></div>
+                  <!-- <div class="outer_box"></div> -->
             </div>
             <div class="past_box">
                   <button class="past_button">履歴を確認</button>
-                  <div class="outer_box"></div>
+                  <!-- <div class="outer_box"></div> -->
             </div>
             <div class="past_box">
                   <button class="past_button">履歴を確認</button>
-                  <div class="outer_box"></div>
+                  <!-- <div class="outer_box"></div> -->
             </div>
       </div>
 
-      .
+      <div class="result">
+            <div class="move_money">
+                  <div class="pocket_money">
+                        <div class="inner">
+                              <h3>予算</h3>                              
+                              <h4 class="budget"></h4>                              
+                        </div>
+                        <div class="budget_box">
+                              <input type="number" id="my_money">
+                              <button class="budget_button">更新</button>
+                        </div>
+                  </div>
+                  <div class="spending">
+                        <h3>支出</h3>
+                        <h4 class="sum_spending"></h4>
+                        <button class="sum_button">算出</button>
+                  </div>
+            </div>
+            <div class="rest_money">
+                  <div class="barance">
+                        <h3>残高</h3>
+                        <div class="number_box">
+                              <h4  class="barance_number"></h4>
+                        </div>
+                  </div>
+            </div>
+      </div>
 
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

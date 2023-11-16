@@ -9,6 +9,8 @@ const $addButton = document.querySelectorAll('.add_button');
 const addButtonIndex = 0;
 const addButtonLength = $addButton.length;
 
+const $spanTag = document.querySelectorAll('span');
+
 // 履歴ボタンを取得
 const $pastButton = document.querySelectorAll('.past_button');
 const pastButtonIndex = 0;
@@ -19,133 +21,196 @@ const $outerBox = document.querySelectorAll('.outer_box');
 const outerBoxIndex = 0;
 const $outerBoxLength = $outerBox.length;
 
+// 予算の要素を取得
+const $budget = document.querySelector('.budget');
+const $myMoney = document.querySelector('#my_money');
+const $budgetButton = document.querySelector('.budget_button');
 
-// const localStorageInputValue0 = localStorage.getItem("arrayvalue0");
+// 支出総額の要素を取得
+const $sumSpending = document.querySelector('.sum_spending');
+const $sumButton = document.querySelector('.sum_button');
 
-let arrayValue0 = [];
-let arrayValue1 = [];
-let arrayValue2 = [];
-let arrayValue3 = [];
-let arrayValue4 = [];
+// 残高の要素を表示
+const $baranceNumber = document.querySelector('.barance_number');
+
+
+// ページロード時に配列データを引き継ぐor無かったら配列に０入れる
+let arrayValue0 = JSON.parse(localStorage.getItem('array0'));
+if (arrayValue0 == null) {
+  arrayValue0 = [];
+}
+
+let arrayValue1 = JSON.parse(localStorage.getItem('array1'));
+if (arrayValue1 == null) {
+  arrayValue1 = [];
+}
+
+let arrayValue2 = JSON.parse(localStorage.getItem('array2'));
+if (arrayValue2 == null) {
+  arrayValue2 = [];
+}
+
+let arrayValue3 = JSON.parse(localStorage.getItem('array3'));
+if (arrayValue3 == null) {
+  arrayValue3 = [];
+}
+
+let arrayValue4 = JSON.parse(localStorage.getItem('array4'));
+if (arrayValue4 == null) {
+  arrayValue4 = [];
+}
+
+// 食費データを取得してspanタグに入れる
+
+// 娯楽費データを取得してspanタグに入れる
+
+// 交通費データを取得してspanタグに入れる
+
+// 交際費データを取得してspanタグに入れる
+
+// 交際費データを取得してspanタグに入れる
 
 // 食費データ追加
-$addButton[0].addEventListener('click', (e) => {
-      const inputValue0 = $input[0].value;
-      arrayValue0.push(inputValue0);
-      const jsonArrayValue0 = JSON.stringify(arrayValue0);
-      localStorage.setItem("array0", jsonArrayValue0);
-      // if(localStorageInputValue0 === null) {
-      //       arrayValue0 = [];
-      // } else {
-      //       arrayValue0 = JSON.parse( localStorageInputValue0 )
-      // }
-      // arrayValue0.push(inputValue0);
-      // localStorage.setItem("arrayvalue0", JSON.stringify( arrayValue0 ));
-      // const p = document.createElement('p');
-      // p.textContent = `- ${inputValue0}円`;
-      // $outerBox[0].appendChild(p);
-      // localStorage.setItem("0", inputValue0);
-      const getarray = localStorage.getItem("array0");
-      const jsssonGetArray = JSON.parse(getarray);
-      const numberArr = jsssonGetArray.map(Number);
-      console.log(numberArr);
-      const result = numberArr.reduce(function(sum, element) {
-            return sum + element;
-      },0);
-      console.log(result);
-      console.log(numberArr.slice(-1)[0]);
-      $input[0].value = "";
-})
-let getdata0 = Number(localStorage.getItem("0"));
-$pastButton[0].addEventListener('click', () => {
-      const p = document.createElement('p');
-      p.innerHTML = getdata0;
-      $outerBox[0].appendChild(p);
-})
+$addButton[0].addEventListener('click', () => {
+  const inputValue0 = $input[0].value;
+  arrayValue0.push(inputValue0);
+  const jsonArrayValue0 = JSON.stringify(arrayValue0);
+  localStorage.setItem('array0', jsonArrayValue0);
+
+  $spanTag[0].textContent = `-${inputValue0}円`;
+
+  $input[0].value = '';
+});
+const getArray0 = localStorage.getItem('array0');
+if(getArray0 !== null) {
+      const jsonGetArray0 = JSON.parse(getArray0);
+      const p0 = jsonGetArray0[jsonGetArray0.length - 1];
+      $spanTag[0].textContent = `-${p0}円`;
+}
+
 
 // 娯楽費データ追加
-$addButton[1].addEventListener('click', (e) => {
-      const inputValue1 = $input[1].value;
-      arrayValue1.push(inputValue1);
-      const jsonArrayValue1 = JSON.stringify(arrayValue1);
-      localStorage.setItem("array1", jsonArrayValue1);
-      const p = document.createElement('p');
-      p.textContent = `- ${inputValue1}円`;
-      $outerBox[1].appendChild(p);
-      localStorage.setItem('1', inputValue1);
-      $input[1].value = "";
-})
-let getdata1 = Number(localStorage.getItem("1"));
-$pastButton[1].addEventListener('click', () => {
-      const p = document.createElement('p');
-      p.innerHTML = getdata1;
-      $outerBox[1].appendChild(p);
-})
+$addButton[1].addEventListener('click', () => {
+  const inputValue1 = $input[1].value;
+  arrayValue1.push(inputValue1);
+  const jsonArrayValue1 = JSON.stringify(arrayValue1);
+  localStorage.setItem('array1', jsonArrayValue1);
+
+  $spanTag[1].textContent = `-${inputValue1}円`;
+
+  $input[1].value = '';
+});
+const getArray1 = localStorage.getItem('array1');
+if(getArray1 !== null) {
+      const jsonGetArray1 = JSON.parse(getArray1);
+      const p1 = jsonGetArray1[jsonGetArray1.length - 1];
+      $spanTag[1].textContent = `-${p1}円`;
+}
 
 // 交通費データ追加
-$addButton[2].addEventListener('click', (e) => {
-      const inputValue2 = $input[2].value;
-      arrayValue2.push(inputValue2);
-      const jsonArrayValue2 = JSON.stringify(arrayValue2);
-      localStorage.setItem("array2", jsonArrayValue2);
-      const p = document.createElement('p');
-      p.textContent = `- ${inputValue2}円`;
-      $outerBox[2].appendChild(p);
-      localStorage.setItem("2", inputValue2);
-      $input[2].value = "";
-})
-let getdata2 = Number(localStorage.getItem("2"));
-$pastButton[2].addEventListener('click', () => {
-      const p = document.createElement('p');
-      p.innerHTML = getdata2;
-      $outerBox[2].appendChild(p);
-})
+$addButton[2].addEventListener('click', () => {
+  const inputValue2 = $input[2].value;
+  arrayValue2.push(inputValue2);
+  const jsonArrayValue2 = JSON.stringify(arrayValue2);
+  localStorage.setItem('array2', jsonArrayValue2);
+
+  $spanTag[2].textContent = `-${inputValue2}円`;
+
+  $input[2].value = '';
+});
+const getArray2 = localStorage.getItem('array2');
+if(getArray2 !== null) {
+      const jsonGetArray2 = JSON.parse(getArray2);
+      const p2 = jsonGetArray2[jsonGetArray2.length - 1];
+      $spanTag[2].textContent = `-${p2}円`;
+}
+
 
 // 交際費データ追加
-$addButton[3].addEventListener('click', (e) => {
-      const inputValue3 = $input[3].value;
-      arrayValue3.push(inputValue3);
-      const jsonArrayValue3 = JSON.stringify(arrayValue3);
-      localStorage.setItem("array3", jsonArrayValue3);
-      const p = document.createElement('p');
-      p.textContent = `- ${inputValue3}円`;
-      $outerBox[3].appendChild(p);
-      localStorage.setItem("3", inputValue3);
-      $input[3].value = "";
-})
-let getdata3 = Number(localStorage.getItem("3"));
-$pastButton[3].addEventListener('click', () => {
-      const p = document.createElement('p');
-      p.innerHTML = getdata3;
-      $outerBox[3].appendChild(p);
+$addButton[3].addEventListener('click', () => {
+  const inputValue3 = $input[3].value;
+  arrayValue3.push(inputValue3);
+  const jsonArrayValue3 = JSON.stringify(arrayValue3);
+  localStorage.setItem('array3', jsonArrayValue3);
+
+  $spanTag[3].textContent = `-${inputValue3}円`;
+  $input[3].value = '';
 });
+const getArray3 = localStorage.getItem('array3');
+if(getArray3 !== null) {
+      const jsonGetArray3 = JSON.parse(getArray3);
+      const p3 = jsonGetArray3[jsonGetArray3.length - 1];
+      $spanTag[3].textContent = `-${p3}円`;
+}
+
+
 
 // 日用品データ追加
-$addButton[4].addEventListener('click', (e) => {
-      const inputValue4 = $input[4].value;
-      arrayValue4.push(inputValue4);
-      const jsonArrayValue4 = JSON.stringify(arrayValue4);
-      localStorage.setItem("array4", jsonArrayValue4);
-      const p = document.createElement('p');
-      p.textContent = `- ${inputValue4}円`;
-      $outerBox[4].appendChild(p);
-      localStorage.setItem("4", inputValue4);
-      $input[4].value = "";
+$addButton[4].addEventListener('click', () => {
+  const inputValue4 = $input[4].value;
+  arrayValue4.push(inputValue4);
+  const jsonArrayValue4 = JSON.stringify(arrayValue4);
+  localStorage.setItem('array4', jsonArrayValue4);
+
+  $spanTag[4].textContent = `-${inputValue4}円`;
+  $input[4].value = '';
 });
-let getdata4 = Number(localStorage.getItem("4"));
-$pastButton[4].addEventListener('click', () => {
-      const p = document.createElement('p');
-      p.innerHTML = getdata4;
-      $outerBox[4].appendChild(p);
+const getArray4 = localStorage.getItem('array4');
+if(getArray4 !== null) {
+      const jsonGetArray4 = JSON.parse(getArray4);
+      const p4 = jsonGetArray4[jsonGetArray4.length - 1];
+      $spanTag[4].textContent = `-${p4}円`;
+}
+
+// それぞれの最後の要素を取得して文字列を数字に変換
+const getdataArray0 = JSON.parse(localStorage.getItem("array0"));
+const numDataArray0 = Number(getdataArray0[getdataArray0.length - 1]);
+console.log(numDataArray0);
+const getdataArray1 = JSON.parse(localStorage.getItem("array1"));
+const numDataArray1 = Number(getdataArray1[getdataArray1.length - 1]);
+console.log(numDataArray1);
+const getdataArray2 = JSON.parse(localStorage.getItem("array2"));
+const numDataArray2 = Number(getdataArray2[getdataArray2.length - 1]);
+console.log(numDataArray2);
+const getdataArray3 = JSON.parse(localStorage.getItem("array3"));
+const numDataArray3 = Number(getdataArray3[getdataArray3.length - 1]);
+console.log(numDataArray3);
+const getdataArray4 = JSON.parse(localStorage.getItem("array4"));
+const numDataArray4 = Number(getdataArray4[getdataArray4.length - 1]);
+console.log(numDataArray4);
+
+let todayTotal = numDataArray0 + numDataArray1 + numDataArray2 + numDataArray3 + numDataArray4;
+console.log(todayTotal);
+
+localStorage.setItem("todayTotal", todayTotal);
+
+
+// 更新ボタンをクリックした処理
+$budgetButton.addEventListener('click', function(){
+      let inputMoney = $myMoney.value;
+      $budget.textContent = `${inputMoney}円`;
+      localStorage.setItem("inputMoney", inputMoney);
+      $myMoney.value = "";
+})
+const getInputMoney = localStorage.getItem("inputMoney");
+if(getInputMoney !== null) {
+      $budget.textContent = `${getInputMoney}円`;
+}
+
+// 算出ボタンをクリックした処理
+$sumButton.addEventListener('click', function(){
+      $sumSpending.textContent = `-${todayTotal}円`;
 });
+$sumSpending.textContent = `-${todayTotal}円`;
+
+
+const total = localStorage.getItem("todayTotal");
+console.log(Number(getInputMoney));
+console.log(todayTotal);
+$baranceNumber.textContent = `${Number(getInputMoney) - todayTotal}円`;
+// 残高の表示計算
+const budgetMoney =  $myMoney.value;
 
 
 
 
-// 繰り返し処理してみたけど上手くいかない！！
-// $addButton[addButtonIndex].addEventListener('click', () => {
-//       const p = document.createElement('p');
-//       p.textContent = $input[inputIndex].value;
-//       $pastButton[pastButtonIndex].appendChild(p);
-// })
-localStorage.clear();
