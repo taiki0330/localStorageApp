@@ -208,9 +208,27 @@ const total = localStorage.getItem("todayTotal");
 console.log(Number(getInputMoney));
 console.log(todayTotal);
 $baranceNumber.textContent = `${Number(getInputMoney) - todayTotal}円`;
+
+
+
+
+
 // 残高の表示計算
 const budgetMoney =  $myMoney.value;
 
 
-
-
+$pastButton[0].addEventListener('click', () => {
+      window.location.href = './food.html';
+});
+$pastButton[1].addEventListener('click', () => {
+      window.location.href = './play.html';
+});
+$pastButton[2].addEventListener('click', () => {
+      window.location.href = './transport.html';
+});
+$pastButton[3].addEventListener('click', () => {
+      window.location.href = './date.html';
+});
+$pastButton[4].addEventListener('click', () => {
+      window.location.href = './use.html';
+});

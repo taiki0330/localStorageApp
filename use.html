@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./css/use.css">
+      <title>日用品</title>
+</head>
+<body>
+      <header class="food">日用品</header>
+      <div class="main"></div>
+  
+      <script>
+        const $main = document.querySelector('.main');
+  
+        const getData = JSON.parse(localStorage.getItem('array4'));
+        const numData = getData.map(Number);      
+        console.log(numData[numData.length - 1]);
+        for (let i = 0; i < numData.length; i++) {
+  
+              let p = document.createElement('p');
+              p.innerText = `${numData[i]}円`;
+              $main.appendChild(p);
+        }
+      </script>
+</body>
+</html>
