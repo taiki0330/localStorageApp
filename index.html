@@ -1,97 +1,102 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="./css/style.css">
-      <title>localStorageApp</title>
-</head>
-<body>
-      <header>
-            <h1>expense management</h1>
-      </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Montserrat&family=Roboto&family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet"
+    />
+    <title>localStorageApp</title>
+  </head>
+  <body>
+    <header>
+      <h1>Today Expense Management</h1>
+    </header>
 
-      <div class="add_contents">
-            <div class="contents_box">
-                  <label for="" class="contents_label">食費</label><span></span>
-                  <input type="number" class="input">
-                  <button class="add_button">追加する</button>
-            </div>
-            <div class="contents_box">
-                  <label for="" class="contents_label">娯楽費</label><span></span>
-                  <input type="number" class="input">
-                  <button class="add_button">追加する</button>
-            </div>
-            <div class="contents_box">
-                  <label for="" class="contents_label">交通費</label><span></span>
-                  <input type="number" class="input">
-                  <button class="add_button">追加する</button>
-            </div>
-            <div class="contents_box">
-                  <label for="" class="contents_label">交際費</label><span></span>
-                  <input type="number" class="input">
-                  <button class="add_button">追加する</button>
-            </div>
-            <div class="contents_box">
-                  <label for="" class="contents_label">日用品</label><span></span>
-                  <input type="number" class="input">
-                  <button class="add_button">追加する</button>
-            </div>
+    <div class="add_contents">
+      <div class="contents_box">
+        <label for="" class="contents_label">食費</label><span></span>
+        <input type="number" class="input" />
+        <button class="add_button">追加する</button>
       </div>
-
-      <div class="past_contents">
-            <div class="past_box">
-                   <button class="past_button">履歴を確認</button>
-                   <!-- <div class="outer_box"></div> -->
-            </div>
-            <div class="past_box">
-                  <button class="past_button">履歴を確認</button>
-                  <!-- <div class="outer_box"></div> -->
-            </div>
-            <div class="past_box">
-                  <button class="past_button">履歴を確認</button>
-                  <!-- <div class="outer_box"></div> -->
-            </div>
-            <div class="past_box">
-                  <button class="past_button">履歴を確認</button>
-                  <!-- <div class="outer_box"></div> -->
-            </div>
-            <div class="past_box">
-                  <button class="past_button">履歴を確認</button>
-                  <!-- <div class="outer_box"></div> -->
-            </div>
+      <div class="contents_box">
+        <label for="" class="contents_label">娯楽費</label><span></span>
+        <input type="number" class="input" />
+        <button class="add_button">追加する</button>
       </div>
-
-      <div class="result">
-            <div class="move_money">
-                  <div class="pocket_money">
-                        <div class="inner">
-                              <h3>予算</h3>                              
-                              <h4 class="budget"></h4>                              
-                        </div>
-                        <div class="budget_box">
-                              <input type="number" id="my_money">
-                              <button class="budget_button">更新</button>
-                        </div>
-                  </div>
-                  <div class="spending">
-                        <h3>支出</h3>
-                        <h4 class="sum_spending"></h4>
-                        <button class="sum_button">算出</button>
-                  </div>
-            </div>
-            <div class="rest_money">
-                  <div class="barance">
-                        <h3>残高</h3>
-                        <div class="number_box">
-                              <h4  class="barance_number"></h4>
-                        </div>
-                  </div>
-            </div>
+      <div class="contents_box">
+        <label for="" class="contents_label">交通費</label><span></span>
+        <input type="number" class="input" />
+        <button class="add_button">追加する</button>
       </div>
+      <div class="contents_box">
+        <label for="" class="contents_label">交際費</label><span></span>
+        <input type="number" class="input" />
+        <button class="add_button">追加する</button>
+      </div>
+      <div class="contents_box">
+        <label for="" class="contents_label">日用品</label><span></span>
+        <input type="number" class="input" />
+        <button class="add_button">追加する</button>
+      </div>
+    </div>
 
+    <div class="past_contents">
+      <div class="past_box">
+        <button class="past_button">履歴を確認</button>
+        <!-- <div class="outer_box"></div> -->
+      </div>
+      <div class="past_box">
+        <button class="past_button">履歴を確認</button>
+        <!-- <div class="outer_box"></div> -->
+      </div>
+      <div class="past_box">
+        <button class="past_button">履歴を確認</button>
+        <!-- <div class="outer_box"></div> -->
+      </div>
+      <div class="past_box">
+        <button class="past_button">履歴を確認</button>
+        <!-- <div class="outer_box"></div> -->
+      </div>
+      <div class="past_box">
+        <button class="past_button">履歴を確認</button>
+        <!-- <div class="outer_box"></div> -->
+      </div>
+    </div>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      <script src="./main.js"></script>
-</body>
+    <div class="result">
+      <div class="move_money">
+        <div class="pocket_money">
+          <div class="inner">
+            <h3>予算</h3>
+            <h4 class="budget"></h4>
+          </div>
+          <div class="budget_box">
+            <input type="number" id="my_money" />
+            <button class="budget_button">更新</button>
+          </div>
+        </div>
+        <div class="spending">
+          <h3>支出</h3>
+          <h4 class="sum_spending"></h4>
+          <button class="sum_button">算出</button>
+        </div>
+      </div>
+      <div class="rest_money">
+        <div class="barance">
+          <h3>残高</h3>
+          <div class="number_box">
+            <h4 class="barance_number"></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
 </html>
